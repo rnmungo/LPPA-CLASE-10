@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="assets/js/index.js" defer></script>
+    <title>Calculadora</title>
+</head>
+<body>
+    <div class="w-full h-screen flex flex-col gap-6 items-center place-content-center">
+        <div class="w-full max-w-md px-2">
+            <form class="bg-neutral-50 shadow-md rounded px-8 pt-6 pb-8" autocomplete="off">
+                <p class="text-base font-semibold mb-4">
+                    Para calcular su índice de masa corporal, ingrese su estatura y peso
+                </p>
+                <p class="text-sm font-medium text-neutral-500 mb-2">
+                    Sistema métrico
+                </p>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="tbHeight">
+                        ESTATURA
+                        <span class="text-sm font-medium text-neutral-500">
+                            (en centímetros)
+                        </span>
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tbHeight" type="text" placeholder="Estatura">
+                </div>
+                <div class="mb-4">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="tbWeight">
+                        PESO
+                        <span class="text-sm font-medium text-neutral-500">
+                            (en kilogramos)
+                        </span>
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tbWeight" type="text" placeholder="Peso">
+                </div>
+                <div class="mb-4">
+                    <button aria-label="Botón para calcular" id="btnCalculate" class="bg-blue-500 hover:bg-blue-700 transition-colors duration-200 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline" type="button">
+                        Calcular
+                    </button>
+                </div>
+                <div class="flex flex-row items-baseline gap-2">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="tbResult">
+                        Resultado:
+                    </label>
+                    <input class="shadow appearance-none border rounded w-full py-2 px-3 bg-gray-100 text-gray-700 leading-tight focus:outline-none focus:shadow-outline" id="tbResult" type="text" readonly>
+                </div>
+            </form>
+        </div>
+        <div class="w-full max-w-md px-2 hidden" id="imcContent">
+            <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+                <table class="w-full text-sm text-left text-gray-500" >
+                    <thead class="text-xs text-gray-700 uppercase bg-gray-50">
+                        <tr>
+                            <th scope="col" class="px-6 py-3">
+                                COMPOSICIÓN CORPORAL
+                            </th>
+                            <th scope="col" class="px-6 py-3">
+                                ÍNDICE DE MASA CORPORAL (IMC)
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableContent">
+                        
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
